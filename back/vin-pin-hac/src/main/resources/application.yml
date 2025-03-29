@@ -1,0 +1,30 @@
+spring:
+  application:
+    name: vin-pin-hac
+  kafka:
+    bootstrap-servers: kafka:9092
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+
+    consumer:
+      group-id: vin-pin-hac
+      auto-offset-reset: earliest
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+  datasource:
+    url: jdbc:postgresql://postgres:5432/db
+    username: user
+    password: pg_pass
+
+  data:
+    jpa:
+      show-sql: true
+      hibernate:
+        ddl-auto: update
+
+minio:
+  url: http://minio:9000
+  accessKey: minio_access_key
+  secretKey: minio_secret_key

@@ -1,21 +1,10 @@
 services:
-  backend:
-    build:
-      context: back
-      target: builder
-    stop_signal: SIGINT
-    ports:
-      - 8080:8080
-    networks:
-      - backend
-
   mongo:
-    image: mongo
-    restart: always
+    image: mongo:latest
     ports:
       - 27017:27017
-    networks:
-      - backend
+    volumes:
+      - mongo-data:/data/db
 
-networks:
-  backend:
+volumes:
+  mongo-data:

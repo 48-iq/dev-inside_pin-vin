@@ -1,0 +1,6 @@
+confluent_kafka
+torch
+librosa
+datasets
+transformers
+minio
