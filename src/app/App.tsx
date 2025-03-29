@@ -5,6 +5,7 @@ import { router } from "./router"
 import { Provider as ReduxProvider} from 'react-redux'
 import { store } from "./store"
 import { theme } from "./theme"
+import '../../public/css/fonts.css'
 
 export const App = () => {
   return (

@@ -1,117 +1,177 @@
-import { Button, Collapse, CollapseProps, Modal, Table, TableProps } from "antd"
-import Panel from "antd/es/splitter/Panel";
+import { Button, Collapse, CollapseProps, Modal, Table, TableProps, Tag } from "antd";
 import { useState } from "react";
+import { useSelector } from "react-redux";
+import { RootState } from "../app/store";
+import { Call } from "../entities/recordsSlice";
 
 export const RecommendationTable = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedRecord, setSelectedRecord] = useState<Call | null>(null);
+  const { calls, loading, error } = useSelector((state: RootState) => state.calls);
 
-  const showModal = () => {
+  if (error) return <div className="centered">Ошибка загрузки данных</div>;
+
+  const showModal = (record: Call) => {
+    setSelectedRecord(record);
     setIsModalOpen(true);
   };
 
   const handleOk = () => {
     setIsModalOpen(false);
+    setSelectedRecord(null);
   };
 
   const handleCancel = () => {
     setIsModalOpen(false);
+    setSelectedRecord(null);
   };
-  
-  const columns: TableProps['columns'] = [
+
+  const getRatingTag = (rating: number) => {
+    let color = '';
+    let label = '';
+    
+    if (rating <= 20) {
+      color = 'green';
+      label = 'Отлично';
+    } else if (rating <= 40) {
+      color = 'lime';
+      label = 'Хорошо';
+    } else if (rating <= 60) {
+      color = 'orange';
+      label = 'Средне';
+    } else if (rating <= 80) {
+      color = 'volcano';
+      label = 'Плохо';
+    } else {
+      color = 'red';
+      label = 'Очень плохо';
+    }
+
+    return <Tag color={color}>{label.toUpperCase()} - {rating}/100</Tag>;
+  };
+
+  const columns: TableProps<Call>['columns'] = [
     {
-      title: 'Name',
-      dataIndex: 'name',
-      key: 'name',
-      render: (text) => <a>{text}</a>,
+      title: 'ДАТА',
+      dataIndex: 'date',
+      key: 'date',
+      render: (date: string) => new Date(date).toLocaleDateString('ru-RU'),
     },
     {
-      title: 'Age',
-      dataIndex: 'age',
-      key: 'age',
+      title: 'НОМЕР ТЕЛЕФОНА',
+      dataIndex: 'clientTel',
+      key: 'clientTel',
+      render: (tel: string) => tel || 'Не указан',
     },
     {
-      title: 'Address',
-      dataIndex: 'address',
-      key: 'address',
+      title: 'ДЛИТЕЛЬНОСТЬ',
+      dataIndex: 'duration',
+      key: 'duration',
+      render: (duration: number) => `${duration} сек.`,
     },
     {
-      title: 'Action',
+      title: 'ОЦЕНКА',
+      dataIndex: 'rating',
+      key: 'rating',
+      render: (rating: number) => getRatingTag(rating),
+    },
+    {
+      title: 'ПОДРОБНЕЕ',
       key: 'action',
-      render: (_, data) => (
-        <Button onClick={showModal} type="primary">Получить</Button>
-      )
+      render: (_, record) => (
+        <Button 
+          onClick={() => showModal(record)} 
+          type="primary"
+        >
+          Подробнее
+        </Button>
+      ),
     }
   ];
-  
-  const data = [
-    {
-      key: '1',
-      name: 'John Brown',
-      age: 32,
-      address: 'New York No. 1 Lake Park',
-      description: 'My name is Joe Black, I am 32 years old, living in Sydney No. 1 Lake Park.',
-    },
-    {
-      key: '2',
-      name: 'Jim Green',
-      age: 42,
-      address: 'London No. 1 Lake Park',
-      description: 'My name is Joe Black, I am 32 years old, living in Sydney No. 1 Lake Park.',
-    },
-    {
-      key: '3',
-      name: 'Joe Black',
-      age: 32,
-      address: 'Sydney No. 1 Lake Park',
-      description: 'My name is Joe Black, I am 32 years old, living in Sydney No. 1 Lake Park.',
-    },
-  ];
 
-  const text = `
-    че то че то
-  `;
-
-  const items: CollapseProps['items'] = [
-    {
-      key: '1',
-      label: 'Рекомендации',
-      children: <p>{text}</p>,
-    },
-    {
-      key: '2',
-      label: 'Баллы чеклиста',
-      children: <p>{text}</p>,
-    },
-    {
-      key: '3',
-      label: 'Количество пауз',
-      children: <p>{text}</p>,
-    },
-    {
-      key: '4',
-      label: 'Средняя длинна пауз',
-      children: <p>{text}</p>,
-    },
-    {
-      key: '5',
-      label: 'Максимальная длинна паузы',
-      children: <p>{text}</p>,
-    },
-  ];
+  const getCollapseItems = (record: Call | null): CollapseProps['items'] => {
+    if (!record) return [];
+    
+    return [
+      {
+        key: '1',
+        label: 'Рекомендации',
+        children: (
+          <ul style={{ margin: 0 }}>
+            {record.recommendations?.length ? (
+              record.recommendations.map((rec, index) => (
+                <li key={index}>{rec}</li>
+              ))
+            ) : (
+              <li>Нет рекомендаций по этому звонку</li>
+            )}
+          </ul>
+        ),
+      },
+      {
+        key: '2',
+        label: 'Баллы чеклиста',
+        children: (
+          <div>
+            <p><strong>Клиентоориентированность:</strong> {record.checklistScores?.clientOrientation ?? 'Н/Д'}</p>
+            <p><strong>Контакт:</strong> {record.checklistScores?.contact ?? 'Н/Д'}</p>
+            <p><strong>Коммуникация:</strong> {record.checklistScores?.effectiveCommunication ?? 'Н/Д'}</p>
+            <p><strong>Презентация:</strong> {record.checklistScores?.presentation ?? 'Н/Д'}</p>
+            <p><strong>Аргументация:</strong> {record.checklistScores?.convincingArguments ?? 'Н/Д'}</p>
+            <p><strong>Результативность:</strong> {record.checklistScores?.resultOrientation ?? 'Н/Д'}</p>
+            <p><strong>Инициативность:</strong> {record.checklistScores?.initiative ?? 'Н/Д'}</p>
+            <p><strong>Работа в CRM:</strong> {record.checklistScores?.cpm ?? 'Н/Д'}</p>
+          </div>
+        ),
+      },
+      {
+        key: '3',
+        label: 'Статистика пауз',
+        children: (
+          <div>
+            <p><strong>Средняя длина:</strong> {record.avgPauseLen ?? '—'} сек.</p>
+            <p><strong>Максимальная длина:</strong> {record.maxPauseLen ?? '—'} сек.</p>
+          </div>
+        ),
+      }
+    ];
+  };
 
   return (
-    <div style={{padding: '20px 200px'}}> 
-      <Table 
-        columns={columns} 
-        dataSource={data} 
-        expandable={{
-          expandedRowRender: (record) => <p style={{ margin: 0 }}>{record.description}</p>,
-          rowExpandable: (record) => record.name !== 'Not Expandable',
-        }}
+    <div style={{ padding: '20px 200px' }}>
+      <Table
+        columns={columns}
+        dataSource={calls}
+        loading={loading}
+        rowKey="id"
+        pagination={{ pageSize: 10 }}
+        scroll={{ x: true }}
       />
-      <Modal title="Data" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <Collapse items={items} />
+      
+      <Modal
+        title={`Детали звонка: ${selectedRecord?.clientTel || 'неизвестный номер'}`}
+        open={isModalOpen}
+        onOk={handleOk}
+        onCancel={handleCancel}
+        width={700}
+        footer={[
+          <Button key="back" onClick={handleCancel}>
+            Закрыть
+          </Button>
+        ]}
+      >
+        {selectedRecord ? (
+          <Collapse
+            items={getCollapseItems(selectedRecord)}
+            defaultActiveKey={['1', '2', '3']}
+            style={{ marginTop: 16 }}
+          />
+        ) : (
+          <div style={{ padding: '20px 0', textAlign: 'center' }}>
+            Не удалось загрузить данные о звонке
+          </div>
+        )}
       </Modal>
     </div>
-  )
-}
+  );
+};

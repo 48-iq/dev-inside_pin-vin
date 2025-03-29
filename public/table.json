@@ -1,0 +1,892 @@
+[
+  {
+    "id": "asdfkjsadf123",
+    "clientTel": "+7 (999) 999 99 99",
+    "managerId": "asdfghjjk2423",
+    "duration": 240,
+    "avgPauseLen": 7,
+    "maxPauseLen": 14,
+    "rating": 30,
+    "recommendations": [
+      "Проводить больше активного слушания",
+      "Уточнять вопросы клиента"
+    ],
+    "competition": {
+      "contact": {
+        "rating": 40,
+        "values": {
+          "clientName": true,
+          "nameAndCompany": true,
+          "clientSphere": true,
+          "lpr": false,
+          "meeting": true
+        }
+      },
+      "effectiveCommunication": {
+        "rating": 6,
+        "values": {
+          "process": false,
+          "analogs": true,
+          "issues": true,
+          "clarifyingQuestions": true,
+          "openQuestions": true,
+          "notInterrupt": false,
+          "activeListening": true,
+          "summarizeInfo": true
+        }
+      },
+      "presentation": {
+        "rating": 3,
+        "values": {
+          "useClientNeeds": true,
+          "answerClientQuestions": true,
+          "showBenefit": false,
+          "showHightPriceFirst": false,
+          "activeExamples": true
+        }
+      },
+      "convincingArguments": {
+        "rating": 4,
+        "values": {
+          "processClientsObjections": false,
+          "askClientObjections": true,
+          "checkClientExtraQuestions": true
+        }
+      },
+      "resultOrientation": {
+        "rating": 9,
+        "values": {
+          "useActivePhrase": true,
+          "recordAgreements": false,
+          "setNextStep": false,
+          "offerDeal": true,
+          "clientNotReadyActions": false,
+          "buyBuy": false
+        }
+      },
+      "initiative": {
+        "rating": 5,
+        "values": {
+          "takesInitiative": true,
+          "equalsPosition": false
+        }
+      },
+      "clientOrientation": {
+        "rating": 4,
+        "values": {
+          "useClientName": false
+        }
+      },
+      "cpm": {
+        "rating": 4,
+        "values": {
+          "actualDeal": false,
+          "requiredFields": true,
+          "surnameField": false,
+          "positivePhrases": true
+        }
+      }
+    }
+  },
+  {
+    "id": "zxcvbnm456",
+    "clientTel": "+7 (888) 888 88 88",
+    "managerId": "qwertyui789",
+    "duration": 180,
+    "avgPauseLen": 5,
+    "maxPauseLen": 10,
+    "rating": 45,
+    "recommendations": [
+      "Улучшить презентацию товара",
+      "Чаще предлагать сделку"
+    ],
+    "competition": {
+      "contact": {
+        "rating": 35,
+        "values": {
+          "clientName": true,
+          "nameAndCompany": false,
+          "clientSphere": true,
+          "lpr": true,
+          "meeting": false
+        }
+      },
+      "effectiveCommunication": {
+        "rating": 8,
+        "values": {
+          "process": true,
+          "analogs": false,
+          "issues": true,
+          "clarifyingQuestions": false,
+          "openQuestions": true,
+          "notInterrupt": true,
+          "activeListening": false,
+          "summarizeInfo": true
+        }
+      },
+      "presentation": {
+        "rating": 7,
+        "values": {
+          "useClientNeeds": false,
+          "answerClientQuestions": true,
+          "showBenefit": true,
+          "showHightPriceFirst": false,
+          "activeExamples": false
+        }
+      },
+      "convincingArguments": {
+        "rating": 6,
+        "values": {
+          "processClientsObjections": true,
+          "askClientObjections": false,
+          "checkClientExtraQuestions": true
+        }
+      },
+      "resultOrientation": {
+        "rating": 5,
+        "values": {
+          "useActivePhrase": false,
+          "recordAgreements": true,
+          "setNextStep": false,
+          "offerDeal": false,
+          "clientNotReadyActions": true,
+          "buyBuy": false
+        }
+      },
+      "initiative": {
+        "rating": 7,
+        "values": {
+          "takesInitiative": false,
+          "equalsPosition": true
+        }
+      },
+      "clientOrientation": {
+        "rating": 6,
+        "values": {
+          "useClientName": true
+        }
+      },
+      "cpm": {
+        "rating": 5,
+        "values": {
+          "actualDeal": true,
+          "requiredFields": false,
+          "surnameField": true,
+          "positivePhrases": false
+        }
+      }
+    }
+  },
+  {
+    "id": "poiuytrew987",
+    "clientTel": "+7 (777) 777 77 77",
+    "managerId": "lkjhgfdsa654",
+    "duration": 300,
+    "avgPauseLen": 10,
+    "maxPauseLen": 20,
+    "rating": 25,
+    "recommendations": [
+      "Снизить количество пауз",
+      "Улучшить работу с возражениями"
+    ],
+    "competition": {
+      "contact": {
+        "rating": 28,
+        "values": {
+          "clientName": false,
+          "nameAndCompany": true,
+          "clientSphere": false,
+          "lpr": true,
+          "meeting": true
+        }
+      },
+      "effectiveCommunication": {
+        "rating": 5,
+        "values": {
+          "process": false,
+          "analogs": true,
+          "issues": false,
+          "clarifyingQuestions": true,
+          "openQuestions": false,
+          "notInterrupt": true,
+          "activeListening": true,
+          "summarizeInfo": false
+        }
+      },
+      "presentation": {
+        "rating": 4,
+        "values": {
+          "useClientNeeds": true,
+          "answerClientQuestions": false,
+          "showBenefit": true,
+          "showHightPriceFirst": true,
+          "activeExamples": false
+        }
+      },
+      "convincingArguments": {
+        "rating": 3,
+        "values": {
+          "processClientsObjections": false,
+          "askClientObjections": true,
+          "checkClientExtraQuestions": false
+        }
+      },
+      "resultOrientation": {
+        "rating": 7,
+        "values": {
+          "useActivePhrase": true,
+          "recordAgreements": true,
+          "setNextStep": true,
+          "offerDeal": false,
+          "clientNotReadyActions": false,
+          "buyBuy": true
+        }
+      },
+      "initiative": {
+        "rating": 4,
+        "values": {
+          "takesInitiative": true,
+          "equalsPosition": false
+        }
+      },
+      "clientOrientation": {
+        "rating": 3,
+        "values": {
+          "useClientName": true
+        }
+      },
+      "cpm": {
+        "rating": 6,
+        "values": {
+          "actualDeal": false,
+          "requiredFields": true,
+          "surnameField": true,
+          "positivePhrases": true
+        }
+      }
+    }
+  },
+  {
+    "id": "mnbvcxz321",
+    "clientTel": "+7 (666) 666 66 66",
+    "managerId": "poiuytrew123",
+    "duration": 150,
+    "avgPauseLen": 3,
+    "maxPauseLen": 8,
+    "rating": 50,
+    "recommendations": [
+      "Улучшить инициативу в диалоге",
+      "Чаще использовать имя клиента"
+    ],
+    "competition": {
+      "contact": {
+        "rating": 45,
+        "values": {
+          "clientName": true,
+          "nameAndCompany": true,
+          "clientSphere": true,
+          "lpr": false,
+          "meeting": true
+        }
+      },
+      "effectiveCommunication": {
+        "rating": 9,
+        "values": {
+          "process": true,
+          "analogs": true,
+          "issues": true,
+          "clarifyingQuestions": true,
+          "openQuestions": true,
+          "notInterrupt": true,
+          "activeListening": true,
+          "summarizeInfo": true
+        }
+      },
+      "presentation": {
+        "rating": 8,
+        "values": {
+          "useClientNeeds": true,
+          "answerClientQuestions": true,
+          "showBenefit": true,
+          "showHightPriceFirst": false,
+          "activeExamples": true
+        }
+      },
+      "convincingArguments": {
+        "rating": 7,
+        "values": {
+          "processClientsObjections": true,
+          "askClientObjections": true,
+          "checkClientExtraQuestions": true
+        }
+      },
+      "resultOrientation": {
+        "rating": 6,
+        "values": {
+          "useActivePhrase": true,
+          "recordAgreements": true,
+          "setNextStep": true,
+          "offerDeal": true,
+          "clientNotReadyActions": false,
+          "buyBuy": false
+        }
+      },
+      "initiative": {
+        "rating": 5,
+        "values": {
+          "takesInitiative": true,
+          "equalsPosition": true
+        }
+      },
+      "clientOrientation": {
+        "rating": 8,
+        "values": {
+          "useClientName": true
+        }
+      },
+      "cpm": {
+        "rating": 7,
+        "values": {
+          "actualDeal": true,
+          "requiredFields": true,
+          "surnameField": true,
+          "positivePhrases": true
+        }
+      }
+    }
+  },
+  {
+    "id": "qazwsxedc147",
+    "clientTel": "+7 (555) 555 55 55",
+    "managerId": "mnbvcxz258",
+    "duration": 210,
+    "avgPauseLen": 6,
+    "maxPauseLen": 12,
+    "rating": 35,
+    "recommendations": [
+      "Улучшить ориентацию на результат",
+      "Работать с возражениями"
+    ],
+    "competition": {
+      "contact": {
+        "rating": 32,
+        "values": {
+          "clientName": true,
+          "nameAndCompany": false,
+          "clientSphere": true,
+          "lpr": true,
+          "meeting": false
+        }
+      },
+      "effectiveCommunication": {
+        "rating": 7,
+        "values": {
+          "process": true,
+          "analogs": false,
+          "issues": true,
+          "clarifyingQuestions": true,
+          "openQuestions": false,
+          "notInterrupt": false,
+          "activeListening": true,
+          "summarizeInfo": false
+        }
+      },
+      "presentation": {
+        "rating": 5,
+        "values": {
+          "useClientNeeds": false,
+          "answerClientQuestions": true,
+          "showBenefit": false,
+          "showHightPriceFirst": true,
+          "activeExamples": true
+        }
+      },
+      "convincingArguments": {
+        "rating": 4,
+        "values": {
+          "processClientsObjections": false,
+          "askClientObjections": true,
+          "checkClientExtraQuestions": true
+        }
+      },
+      "resultOrientation": {
+        "rating": 8,
+        "values": {
+          "useActivePhrase": true,
+          "recordAgreements": false,
+          "setNextStep": true,
+          "offerDeal": true,
+          "clientNotReadyActions": true,
+          "buyBuy": false
+        }
+      },
+      "initiative": {
+        "rating": 6,
+        "values": {
+          "takesInitiative": false,
+          "equalsPosition": true
+        }
+      },
+      "clientOrientation": {
+        "rating": 5,
+        "values": {
+          "useClientName": false
+        }
+      },
+      "cpm": {
+        "rating": 4,
+        "values": {
+          "actualDeal": false,
+          "requiredFields": true,
+          "surnameField": false,
+          "positivePhrases": true
+        }
+      }
+    }
+  },
+  {
+    "id": "asdfkjsadf123",
+    "clientTel": "+7 (999) 999 99 99",
+    "managerId": "asdfghjjk2423",
+    "duration": 240,
+    "avgPauseLen": 7,
+    "maxPauseLen": 14,
+    "rating": 30,
+    "recommendations": [
+      "Проводить больше активного слушания",
+      "Уточнять вопросы клиента"
+    ],
+    "competition": {
+      "contact": {
+        "rating": 40,
+        "values": {
+          "clientName": true,
+          "nameAndCompany": true,
+          "clientSphere": true,
+          "lpr": false,
+          "meeting": true
+        }
+      },
+      "effectiveCommunication": {
+        "rating": 6,
+        "values": {
+          "process": false,
+          "analogs": true,
+          "issues": true,
+          "clarifyingQuestions": true,
+          "openQuestions": true,
+          "notInterrupt": false,
+          "activeListening": true,
+          "summarizeInfo": true
+        }
+      },
+      "presentation": {
+        "rating": 3,
+        "values": {
+          "useClientNeeds": true,
+          "answerClientQuestions": true,
+          "showBenefit": false,
+          "showHightPriceFirst": false,
+          "activeExamples": true
+        }
+      },
+      "convincingArguments": {
+        "rating": 4,
+        "values": {
+          "processClientsObjections": false,
+          "askClientObjections": true,
+          "checkClientExtraQuestions": true
+        }
+      },
+      "resultOrientation": {
+        "rating": 9,
+        "values": {
+          "useActivePhrase": true,
+          "recordAgreements": false,
+          "setNextStep": false,
+          "offerDeal": true,
+          "clientNotReadyActions": false,
+          "buyBuy": false
+        }
+      },
+      "initiative": {
+        "rating": 5,
+        "values": {
+          "takesInitiative": true,
+          "equalsPosition": false
+        }
+      },
+      "clientOrientation": {
+        "rating": 4,
+        "values": {
+          "useClientName": false
+        }
+      },
+      "cpm": {
+        "rating": 4,
+        "values": {
+          "actualDeal": false,
+          "requiredFields": true,
+          "surnameField": false,
+          "positivePhrases": true
+        }
+      }
+    }
+  },
+  {
+    "id": "zxcvbnm456",
+    "clientTel": "+7 (888) 888 88 88",
+    "managerId": "qwertyui789",
+    "duration": 180,
+    "avgPauseLen": 5,
+    "maxPauseLen": 10,
+    "rating": 45,
+    "recommendations": [
+      "Улучшить презентацию товара",
+      "Чаще предлагать сделку"
+    ],
+    "competition": {
+      "contact": {
+        "rating": 35,
+        "values": {
+          "clientName": true,
+          "nameAndCompany": false,
+          "clientSphere": true,
+          "lpr": true,
+          "meeting": false
+        }
+      },
+      "effectiveCommunication": {
+        "rating": 8,
+        "values": {
+          "process": true,
+          "analogs": false,
+          "issues": true,
+          "clarifyingQuestions": false,
+          "openQuestions": true,
+          "notInterrupt": true,
+          "activeListening": false,
+          "summarizeInfo": true
+        }
+      },
+      "presentation": {
+        "rating": 7,
+        "values": {
+          "useClientNeeds": false,
+          "answerClientQuestions": true,
+          "showBenefit": true,
+          "showHightPriceFirst": false,
+          "activeExamples": false
+        }
+      },
+      "convincingArguments": {
+        "rating": 6,
+        "values": {
+          "processClientsObjections": true,
+          "askClientObjections": false,
+          "checkClientExtraQuestions": true
+        }
+      },
+      "resultOrientation": {
+        "rating": 5,
+        "values": {
+          "useActivePhrase": false,
+          "recordAgreements": true,
+          "setNextStep": false,
+          "offerDeal": false,
+          "clientNotReadyActions": true,
+          "buyBuy": false
+        }
+      },
+      "initiative": {
+        "rating": 7,
+        "values": {
+          "takesInitiative": false,
+          "equalsPosition": true
+        }
+      },
+      "clientOrientation": {
+        "rating": 6,
+        "values": {
+          "useClientName": true
+        }
+      },
+      "cpm": {
+        "rating": 5,
+        "values": {
+          "actualDeal": true,
+          "requiredFields": false,
+          "surnameField": true,
+          "positivePhrases": false
+        }
+      }
+    }
+  },
+  {
+    "id": "poiuytrew987",
+    "clientTel": "+7 (777) 777 77 77",
+    "managerId": "lkjhgfdsa654",
+    "duration": 300,
+    "avgPauseLen": 10,
+    "maxPauseLen": 20,
+    "rating": 25,
+    "recommendations": [
+      "Снизить количество пауз",
+      "Улучшить работу с возражениями"
+    ],
+    "competition": {
+      "contact": {
+        "rating": 28,
+        "values": {
+          "clientName": false,
+          "nameAndCompany": true,
+          "clientSphere": false,
+          "lpr": true,
+          "meeting": true
+        }
+      },
+      "effectiveCommunication": {
+        "rating": 5,
+        "values": {
+          "process": false,
+          "analogs": true,
+          "issues": false,
+          "clarifyingQuestions": true,
+          "openQuestions": false,
+          "notInterrupt": true,
+          "activeListening": true,
+          "summarizeInfo": false
+        }
+      },
+      "presentation": {
+        "rating": 4,
+        "values": {
+          "useClientNeeds": true,
+          "answerClientQuestions": false,
+          "showBenefit": true,
+          "showHightPriceFirst": true,
+          "activeExamples": false
+        }
+      },
+      "convincingArguments": {
+        "rating": 3,
+        "values": {
+          "processClientsObjections": false,
+          "askClientObjections": true,
+          "checkClientExtraQuestions": false
+        }
+      },
+      "resultOrientation": {
+        "rating": 7,
+        "values": {
+          "useActivePhrase": true,
+          "recordAgreements": true,
+          "setNextStep": true,
+          "offerDeal": false,
+          "clientNotReadyActions": false,
+          "buyBuy": true
+        }
+      },
+      "initiative": {
+        "rating": 4,
+        "values": {
+          "takesInitiative": true,
+          "equalsPosition": false
+        }
+      },
+      "clientOrientation": {
+        "rating": 3,
+        "values": {
+          "useClientName": true
+        }
+      },
+      "cpm": {
+        "rating": 6,
+        "values": {
+          "actualDeal": false,
+          "requiredFields": true,
+          "surnameField": true,
+          "positivePhrases": true
+        }
+      }
+    }
+  },
+  {
+    "id": "mnbvcxz321",
+    "clientTel": "+7 (666) 666 66 66",
+    "managerId": "poiuytrew123",
+    "duration": 150,
+    "avgPauseLen": 3,
+    "maxPauseLen": 8,
+    "rating": 50,
+    "recommendations": [
+      "Улучшить инициативу в диалоге",
+      "Чаще использовать имя клиента"
+    ],
+    "competition": {
+      "contact": {
+        "rating": 45,
+        "values": {
+          "clientName": true,
+          "nameAndCompany": true,
+          "clientSphere": true,
+          "lpr": false,
+          "meeting": true
+        }
+      },
+      "effectiveCommunication": {
+        "rating": 9,
+        "values": {
+          "process": true,
+          "analogs": true,
+          "issues": true,
+          "clarifyingQuestions": true,
+          "openQuestions": true,
+          "notInterrupt": true,
+          "activeListening": true,
+          "summarizeInfo": true
+        }
+      },
+      "presentation": {
+        "rating": 8,
+        "values": {
+          "useClientNeeds": true,
+          "answerClientQuestions": true,
+          "showBenefit": true,
+          "showHightPriceFirst": false,
+          "activeExamples": true
+        }
+      },
+      "convincingArguments": {
+        "rating": 7,
+        "values": {
+          "processClientsObjections": true,
+          "askClientObjections": true,
+          "checkClientExtraQuestions": true
+        }
+      },
+      "resultOrientation": {
+        "rating": 6,
+        "values": {
+          "useActivePhrase": true,
+          "recordAgreements": true,
+          "setNextStep": true,
+          "offerDeal": true,
+          "clientNotReadyActions": false,
+          "buyBuy": false
+        }
+      },
+      "initiative": {
+        "rating": 5,
+        "values": {
+          "takesInitiative": true,
+          "equalsPosition": true
+        }
+      },
+      "clientOrientation": {
+        "rating": 8,
+        "values": {
+          "useClientName": true
+        }
+      },
+      "cpm": {
+        "rating": 7,
+        "values": {
+          "actualDeal": true,
+          "requiredFields": true,
+          "surnameField": true,
+          "positivePhrases": true
+        }
+      }
+    }
+  },
+  {
+    "id": "qazwsxedc147",
+    "clientTel": "+7 (555) 555 55 55",
+    "managerId": "mnbvcxz258",
+    "duration": 210,
+    "avgPauseLen": 6,
+    "maxPauseLen": 12,
+    "rating": 35,
+    "recommendations": [
+      "Улучшить ориентацию на результат",
+      "Работать с возражениями"
+    ],
+    "competition": {
+      "contact": {
+        "rating": 32,
+        "values": {
+          "clientName": true,
+          "nameAndCompany": false,
+          "clientSphere": true,
+          "lpr": true,
+          "meeting": false
+        }
+      },
+      "effectiveCommunication": {
+        "rating": 7,
+        "values": {
+          "process": true,
+          "analogs": false,
+          "issues": true,
+          "clarifyingQuestions": true,
+          "openQuestions": false,
+          "notInterrupt": false,
+          "activeListening": true,
+          "summarizeInfo": false
+        }
+      },
+      "presentation": {
+        "rating": 5,
+        "values": {
+          "useClientNeeds": false,
+          "answerClientQuestions": true,
+          "showBenefit": false,
+          "showHightPriceFirst": true,
+          "activeExamples": true
+        }
+      },
+      "convincingArguments": {
+        "rating": 4,
+        "values": {
+          "processClientsObjections": false,
+          "askClientObjections": true,
+          "checkClientExtraQuestions": true
+        }
+      },
+      "resultOrientation": {
+        "rating": 8,
+        "values": {
+          "useActivePhrase": true,
+          "recordAgreements": false,
+          "setNextStep": true,
+          "offerDeal": true,
+          "clientNotReadyActions": true,
+          "buyBuy": false
+        }
+      },
+      "initiative": {
+        "rating": 6,
+        "values": {
+          "takesInitiative": false,
+          "equalsPosition": true
+        }
+      },
+      "clientOrientation": {
+        "rating": 5,
+        "values": {
+          "useClientName": false
+        }
+      },
+      "cpm": {
+        "rating": 4,
+        "values": {
+          "actualDeal": false,
+          "requiredFields": true,
+          "surnameField": false,
+          "positivePhrases": true
+        }
+      }
+    }
+  }
+]

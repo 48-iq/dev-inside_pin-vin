@@ -91,12 +91,12 @@ export const EmotionPieChart = () => {
   );
 
   return (
-    <PieChart width={400} height={400}>
+    <PieChart width={440} height={400}>
       <Pie
         activeIndex={activeIndex}
         activeShape={renderActiveShape}
         data={data}
-        cx={200}
+        cx={220}
         cy={200}
         innerRadius={60}
         outerRadius={80}

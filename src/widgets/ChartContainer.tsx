@@ -99,6 +99,7 @@ const ChartWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #ffe6e6;
 `;
 
 const ChartTitle = styled.h3`

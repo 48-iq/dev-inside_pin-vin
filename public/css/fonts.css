@@ -1,0 +1,30 @@
+/* Подключение шрифта Jost */
+@font-face {
+  font-family: 'Jost';
+  src: url('/fonts/Jost-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Jost';
+  src: url('/fonts/Jost-Italic-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* Применение шрифта для Ant Design */
+body {
+  font-family: 'Jost', sans-serif;
+}
+
+.ant-btn,
+.ant-input,
+.ant-menu-title-content,
+.ant-tabs-tab,
+.ant-table,
+.ant-collapse-header {
+  font-family: 'Jost', sans-serif !important;
+}

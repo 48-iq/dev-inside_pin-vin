@@ -3,10 +3,6 @@ import { ThemeConfig } from "antd";
 export const theme: ThemeConfig  = {
   components: {
     Tabs: {
-      // itemColor: 'white',
-      // itemHoverColor: '#EC9898',
-      // itemSelectedColor: 'white',
-      // inkBarColor: 'white', 
       horizontalItemGutter: 100,
     },
     Table: {
@@ -15,6 +11,10 @@ export const theme: ThemeConfig  = {
     },
     Button: {
       colorPrimary: '#AA1515',
-    }
+    },
+    Collapse: {
+      headerBg: 'white',
+      colorTextHeading: '#AA1515'
+    },
   }
 }
