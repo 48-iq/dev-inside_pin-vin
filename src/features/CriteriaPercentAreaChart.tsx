@@ -85,7 +85,7 @@ const renderTooltipContent = (o: any) => {
 export const CriteriaPercentAreaChart = () => {
   return (
     <AreaChart
-      width={800}
+      width={700}
       height={150}
       data={data}
       stackOffset="expand"

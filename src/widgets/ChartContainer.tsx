@@ -9,38 +9,37 @@ export const ChartContainer = () => {
     <Container>
       <LeftSection>
         <MandatoryCallsText>
-          КОЛ-ВО ОБЯЗАТЕЛЬНЫХ ЗВОНКОВ: <span>100</span>
+          КОЛ-ВО ОБРАБОТАННЫХ ЗВОНКОВ: <br />
+          <span>100</span>
         </MandatoryCallsText>
         <ChartWrapper>
-          <ChartTitle>ЕМОЦИОНАЛЬНАЯ ОЦЕНКА ЗВОНКОВ</ChartTitle>
+          <ChartTitle>ЭМОЦИОНАЛЬНАЯ ОЦЕНКА ЗВОНКОВ</ChartTitle>
           <EmotionPieChart />
+        </ChartWrapper>
+
+        <ChartWrapper>
+          <ChartTitle>СРЕДНЕЕ ВРЕМЯ ПАУЗ В ДИАЛОГЕ</ChartTitle>
+          <PauseAreaChart />
         </ChartWrapper>
       </LeftSection>
 
       <RightSection>
         <TopRightText>
-          ТУТ ОЦЕНЬ КРУТОЙ ТЕКСТ про Александра
+          <span>ПОСЛЕДНИЙ ЗВОНОК</span> <br />
+          ТУТ ОЧЕНЬ КРУТОЙ ТЕКСТ про Александра
         </TopRightText>
 
-        <MiddleRow>
+        <div>
           <ChartWrapper>
             <ChartTitle>СРЕДНИЙ БАЛЛ ПО КРИТЕРИЯМ ЗВОНКОВ</ChartTitle>
             <GPAAreaChart />
           </ChartWrapper>
-          <ChartWrapper>
-            <ChartTitle>СРЕДНЕЕ ВРЕМЯ ПАУЗ В ДИАЛОГЕ</ChartTitle>
-            <PauseAreaChart />
-          </ChartWrapper>
-        </MiddleRow>
+        </div>
 
         <ChartWrapper>
           <ChartTitle>КРИТЕРИИ ЗВОНКОВ</ChartTitle>
           <CriteriaPercentAreaChart />
         </ChartWrapper>
-
-        <BottomText>
-          Уточнение 7 недельных путей по ЧАСТЬ? для каждого критерия
-        </BottomText>
       </RightSection>
     </Container>
   );
@@ -51,8 +50,8 @@ const Container = styled.div`
   grid-template-columns: 1fr 2fr;
   gap: 20px;
   padding: 20px;
-  height: 100vh;
   box-sizing: border-box;
+  color: #AA1515;
 `;
 
 const LeftSection = styled.div`
@@ -71,13 +70,11 @@ const MandatoryCallsText = styled.div`
   background-color: #ffe6e6;
   padding: 20px;
   border-radius: 10px;
-  font-size: 18px;
+  font-size: 32px;
   font-weight: bold;
   text-align: center;
-
   span {
-    font-size: 36px;
-    color: #ff4d4d;
+    font-size: 55px;
   }
 `;
 
@@ -88,17 +85,16 @@ const TopRightText = styled.div`
   font-size: 18px;
   font-weight: bold;
   text-align: center;
-`;
-
-const MiddleRow = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
+  height: 80%;
+  color: black;
+  span {
+    color: #AA1515;
+    font-size: 25px;
+  }
 `;
 
 const ChartWrapper = styled.div`
   background-color: #f9f9f9;
-  padding: 15px;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
@@ -106,14 +102,5 @@ const ChartWrapper = styled.div`
 `;
 
 const ChartTitle = styled.h3`
-  font-size: 16px;
-  color: #ff4d4d;
-  margin-bottom: 10px;
-  text-align: center;
-`;
-
-const BottomText = styled.div`
-  font-size: 12px;
-  color: #666;
-  text-align: center;
+  font-size: 22px;
 `;

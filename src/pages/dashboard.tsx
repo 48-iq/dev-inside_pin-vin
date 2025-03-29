@@ -34,19 +34,15 @@ export const DashboardPage = () => {
   ]
   return (
     <>
-        <Layout style={{ backgroundColor: 'white', minHeight: '100vh' }}>
+      <Layout style={{ backgroundColor: 'white', minHeight: '100vh'}}>
         <Header style={{backgroundColor: '#AA1515'}}>
           <img src={logo} style={{marginTop: 4, position: 'absolute'}} />
-          <Tabs items={items} size="large" type="line" style={{marginTop: 8}} centered />
         </Header>
-        <Content style={{paddingLeft: 30 }}>
+        <Content>
+          <Tabs items={items} size="large" centered />
         </Content>
-        <Footer>created with love by © "dev inside"</Footer>
+        <Footer style={{backgroundColor: 'white'}}>created with love by © "dev inside"</Footer>
       </Layout>
-    {/* <Header>
-      Vin Pin
-      <Tabs items={items} centered size="large" type="card"/>
-    </Header> */}
     </>
   )
 }

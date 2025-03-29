@@ -55,7 +55,7 @@ const data = [
 export const GPAAreaChart = () => {
   return (
     <AreaChart
-      width={800}
+      width={700}
       height={150}
       data={data}
       margin={{

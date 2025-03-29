@@ -1,5 +1,4 @@
-import { ConfigProvider as AntdConfigProvider, Layout } from "antd"
-import { Content, Footer, Header } from "antd/es/layout/layout"
+import { ConfigProvider as AntdConfigProvider } from "antd"
 import ruRU from "antd/es/locale/ru_RU"
 import { RouterProvider } from "react-router-dom"
 import { router } from "./router"
@@ -15,10 +14,10 @@ export const App = () => {
       theme={{
         components: {
           Tabs: {
-            itemColor: 'white',
-            itemHoverColor: '#EC9898',
-            itemSelectedColor: 'white',
-            inkBarColor: 'white', 
+            // itemColor: 'white',
+            // itemHoverColor: '#EC9898',
+            // itemSelectedColor: 'white',
+            // inkBarColor: 'white', 
             horizontalItemGutter: 100,
           }
         }
