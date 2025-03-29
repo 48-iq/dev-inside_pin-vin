@@ -4,7 +4,7 @@ import { AudioRecorder } from "../widgets/AudioRecorder"
 import { AudioUploader } from "../widgets/AudioUploader"
 import { Content, Footer, Header } from "antd/es/layout/layout"
 import { FileAddOutlined, LineChartOutlined, PhoneOutlined } from "@ant-design/icons"
-import logo from '../../public/vinpin-white-logo.svg'
+import logo from '/vinpin-white-logo.svg'
 import { ChartContainer } from "../widgets/ChartContainer"
 
 export const DashboardPage = () => {

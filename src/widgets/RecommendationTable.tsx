@@ -1,6 +1,22 @@
-import { Table, TableProps } from "antd"
+import { Button, Collapse, CollapseProps, Modal, Table, TableProps } from "antd"
+import Panel from "antd/es/splitter/Panel";
+import { useState } from "react";
 
 export const RecommendationTable = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
+  
   const columns: TableProps['columns'] = [
     {
       title: 'Name',
@@ -18,6 +34,13 @@ export const RecommendationTable = () => {
       dataIndex: 'address',
       key: 'address',
     },
+    {
+      title: 'Action',
+      key: 'action',
+      render: (_, data) => (
+        <Button onClick={showModal} type="primary">Получить</Button>
+      )
+    }
   ];
   
   const data = [
@@ -43,8 +66,41 @@ export const RecommendationTable = () => {
       description: 'My name is Joe Black, I am 32 years old, living in Sydney No. 1 Lake Park.',
     },
   ];
+
+  const text = `
+    че то че то
+  `;
+
+  const items: CollapseProps['items'] = [
+    {
+      key: '1',
+      label: 'Рекомендации',
+      children: <p>{text}</p>,
+    },
+    {
+      key: '2',
+      label: 'Баллы чеклиста',
+      children: <p>{text}</p>,
+    },
+    {
+      key: '3',
+      label: 'Количество пауз',
+      children: <p>{text}</p>,
+    },
+    {
+      key: '4',
+      label: 'Средняя длинна пауз',
+      children: <p>{text}</p>,
+    },
+    {
+      key: '5',
+      label: 'Максимальная длинна паузы',
+      children: <p>{text}</p>,
+    },
+  ];
+
   return (
-    <> 
+    <div style={{padding: '20px 200px'}}> 
       <Table 
         columns={columns} 
         dataSource={data} 
@@ -52,7 +108,10 @@ export const RecommendationTable = () => {
           expandedRowRender: (record) => <p style={{ margin: 0 }}>{record.description}</p>,
           rowExpandable: (record) => record.name !== 'Not Expandable',
         }}
-      /> 
-    </>
+      />
+      <Modal title="Data" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
+        <Collapse items={items} />
+      </Modal>
+    </div>
   )
 }

@@ -4,6 +4,7 @@ import { RouterProvider } from "react-router-dom"
 import { router } from "./router"
 import { Provider as ReduxProvider} from 'react-redux'
 import { store } from "./store"
+import { theme } from "./theme"
 
 export const App = () => {
   return (
@@ -11,17 +12,7 @@ export const App = () => {
       locale={ruRU}
       componentSize={"large"}
       getPopupContainer={(trigger: any) => trigger?.parentElement}
-      theme={{
-        components: {
-          Tabs: {
-            // itemColor: 'white',
-            // itemHoverColor: '#EC9898',
-            // itemSelectedColor: 'white',
-            // inkBarColor: 'white', 
-            horizontalItemGutter: 100,
-          }
-        }
-      }}
+      theme={theme}
     >
       <ReduxProvider store={store}>
           <RouterProvider router={router} />
