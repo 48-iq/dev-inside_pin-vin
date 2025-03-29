@@ -1,27 +1,46 @@
-from flask import Flask
+from fastapi import FastAPI, UploadFile, File, Form, BackgroundTasks
+import uvicorn
 import pymongo
 import os
+from confluent_kafka import Consumer, KafkaException
+from process import process_call_record
 
-app = Flask(__name__)
+
 
 client = pymongo.MongoClient("mongo:27017")
 
 db = client["app"]
 
-collection = db["call_records"]
+call_records = db["call_records"]
+app = FastAPI()
 
+def start_consumer():
+  consumer = Consumer({
+    'bootstrap.servers': 'kafka:9092',
+    'group.id': 'py-back',
+    'auto.offset.reset': 'earliest'
+  })
+  consumer.subscribe(['call-records-events-topic'])
 
-
-@app.get("/")
-def postCallRecord():
-  id = collection.insert_one({"a": "b123"}).inserted_id
+  try:
+    while True:
+      msg = consumer.poll(1.0)
+      if msg is None:
+        continue
+      if msg.error():
+        raise KafkaException(msg.error())
+      else:
+        process_call_record(msg.value())
   
-  return str(id)
+  except KeyboardInterrupt:
+    pass
+  finally:
+    consumer.close()
 
+
+
+  
+  
 
 if __name__ == "__main__":
-  app.run(
-    host="0.0.0.0",
-    port=8080,
-    debug=True
-  )
+  uvicorn.run("main:app", host="0.0.0.0", port=8080, reload=True)
