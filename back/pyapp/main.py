@@ -10,7 +10,9 @@ import requests
 from gigachat import GigaChat
 from gigachat.models import Chat, Messages, MessagesRole
 import json
-import uuid
+import datetime
+from converter import convert_to_avg
+from competitions import generate_competitions
 
 logging.set_verbosity_error()  
 
@@ -27,7 +29,7 @@ model.to(device)
 
 processor = AutoProcessor.from_pretrained(model_id)
 
-mongo_client = MongoClient('mongodb://localhost:27017/')
+mongo_client = MongoClient('mongodb://localhost:27019/')
 db = mongo_client["app_db"]
 calls = db["calls"]
 
@@ -48,7 +50,7 @@ headers = {
   'Content-Type': 'application/x-www-form-urlencoded',
   'Accept': 'application/json',
   'RqUID': '6904a87d-4909-455d-8b87-33269a26c04e',
-  'Authorization': 'Basic '
+  'Authorization': 'Basic N2Q0Y2Y3MTQtMjZiZS00ZTUxLWFhMDQtM2I0Y2VlNmVmYTg2OjM2MTFlNzE2LTEzYTEtNGFkYy1hODJkLWI1YmExYjE4ZDM4Mw=='
 }
 
 response = requests.request("POST", url, headers=headers, data=payload, verify=False)
@@ -91,6 +93,7 @@ CRITERIA = [
   "Заполнил поле 'фамилия' - surnameField",
   "Использовал позитивные формулировки - positivePhrases"
 ]
+
 
 def analyze_call(transcript: str, criteria: list) -> dict:
     
@@ -174,17 +177,18 @@ def process_call(
     pauses = calc_pauses(tresult["chunks"])
     recomendations = result["recommendations"]
     tone = result["tone"]["tone"]
-    competitions = []
+    competitions = {}
     avgPauseLen = pauses["average_pause"]
     maxPauseLen = pauses["max_pause"]
     pauseCount = pauses["pause_count"]
 
     for key, value in result["competitions"].items():
-        competitions.append({
-            key: value["result"]
-        })
-    
+        competitions[key] = value["result"]
+    print(competitions)
+    cmp = generate_competitions(competitions)
     call = {
+        "date": datetime.datetime.now().strftime("%Y-%m-%d"),
+        "hour": datetime.datetime.now().strftime("%H"),
         "managerId": managerId,
         "clientTel": clientTel,
         "duration": duration,
@@ -192,11 +196,14 @@ def process_call(
         "maxPauseLen": maxPauseLen,
         "pauseCount": pauseCount,
         "tone": tone,
-        "competitions": competitions,
+        "rating": cmp["rating"],
+        "competitions": cmp["competitions"],
         "recomendations": recomendations
     }
     id = calls.insert_one(call).inserted_id
     return {"id": str(id)}
+
+
 
 @app.get("/api/get-calls")
 def get_calls():
@@ -204,8 +211,25 @@ def get_calls():
     for call in calls.find():
         call["_id"] = str(call["_id"])
         calls_list.append(call)
+    print(calls_list)
     return {"calls": calls_list}
 
+
+@app.get("/api/get-avg")
+def get_avg():
+    calls_list = []
+    t_duration = 0
+    t_pause_len = 0
+    t_pause_count = 0
+    for call in calls.find():
+        call["_id"] = str(call["_id"])
+        t_duration += call["duration"]
+        t_pause_len += call["avgPauseLen"]
+        t_pause_count += call["pauseCount"]
+        calls_list.append(call)
+    result = convert_to_avg(calls_list)
+    return result;
+    
     
 
 if __name__ == "__main__":
