@@ -13,6 +13,7 @@ import { fetchCallsFailure, fetchCallsStart, fetchCallsSuccess } from "../entiti
 import mockCalls from '../../public/table.json';
 import mockDaily from '../../public/chart.json';
 import { fetchDailyCallsFailure, fetchDailyCallsStart, fetchDailyCallsSuccess } from "../entities/ChartSlice"
+import styled from "styled-components"
 
 export const DashboardPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -54,10 +55,10 @@ export const DashboardPage = () => {
       key: '3',
       label: 'ОТПРАВИТЬ',
       children: 
-        <>
+        <Container>
           <AudioRecorder />
           <AudioUploader />
-        </>,
+        </Container>,
       icon: <FileAddOutlined />
     }
   ]
@@ -75,3 +76,8 @@ export const DashboardPage = () => {
     </>
   )
 }
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+`
