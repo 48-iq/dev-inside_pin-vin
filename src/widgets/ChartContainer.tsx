@@ -3,14 +3,17 @@ import { CriteriaPercentAreaChart } from "../features/CriteriaPercentAreaChart";
 import { EmotionPieChart } from "../features/EmotionPieChart";
 import { GPAAreaChart } from "../features/GPAAreaChart";
 import { PauseAreaChart } from "../features/PauseAreaChart";
+import { useSelector } from "react-redux";
+import { RootState } from "../app/store";
 
 export const ChartContainer = () => {
+  const { averages, loading, error } = useSelector((state: RootState) => state.dailyCalls);
   return (
     <Container>
       <LeftSection>
         <MandatoryCallsText>
           КОЛ-ВО ОБРАБОТАННЫХ ЗВОНКОВ: <br />
-          <span>100</span>
+          <span>{loading ? "Загрузка..." : error ? "Ошибка" : averages.processedCallRecords}</span>
         </MandatoryCallsText>
         <ChartWrapper>
           <ChartTitle>ЭМОЦИОНАЛЬНАЯ ОЦЕНКА ЗВОНКОВ</ChartTitle>

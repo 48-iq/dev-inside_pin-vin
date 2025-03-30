@@ -2,7 +2,7 @@ import { Button, Collapse, CollapseProps, Modal, Table, TableProps, Tag } from "
 import { useState } from "react";
 import { useSelector } from "react-redux";
 import { RootState } from "../app/store";
-import { Call } from "../entities/recordsSlice";
+import { Call } from "../entities/TableSlice";
 
 export const RecommendationTable = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -144,8 +144,6 @@ export const RecommendationTable = () => {
         dataSource={calls}
         loading={loading}
         rowKey="id"
-        pagination={{ pageSize: 10 }}
-        scroll={{ x: true }}
       />
       
       <Modal
@@ -163,7 +161,6 @@ export const RecommendationTable = () => {
         {selectedRecord ? (
           <Collapse
             items={getCollapseItems(selectedRecord)}
-            defaultActiveKey={['1', '2', '3']}
             style={{ marginTop: 16 }}
           />
         ) : (

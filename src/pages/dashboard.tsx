@@ -9,8 +9,10 @@ import { ChartContainer } from "../widgets/ChartContainer"
 import { useDispatch } from "react-redux"
 import { AppDispatch } from "../app/store"
 import { useEffect } from "react"
-import { fetchCallsFailure, fetchCallsStart, fetchCallsSuccess } from "../entities/recordsSlice"
+import { fetchCallsFailure, fetchCallsStart, fetchCallsSuccess } from "../entities/TableSlice"
 import mockCalls from '../../public/table.json';
+import mockDaily from '../../public/chart.json';
+import { fetchDailyCallsFailure, fetchDailyCallsStart, fetchDailyCallsSuccess } from "../entities/ChartSlice"
 
 export const DashboardPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -19,16 +21,15 @@ export const DashboardPage = () => {
     const loadCalls = async () => {
       try {
         dispatch(fetchCallsStart());
-        
-        // Здесь обычно будет запрос к API, но используем моковые данные
+        dispatch(fetchDailyCallsStart());
         // const response = await api.get('/calls');
         // dispatch(fetchCallsSuccess(response.data));
         
-        // Используем импортированные моковые данные
         dispatch(fetchCallsSuccess(mockCalls));
-        
+        dispatch(fetchDailyCallsSuccess(mockDaily));
       } catch (err) {
         dispatch(fetchCallsFailure((err as Error).message));
+        dispatch(fetchDailyCallsFailure((err as Error).message));
       }
     };
 

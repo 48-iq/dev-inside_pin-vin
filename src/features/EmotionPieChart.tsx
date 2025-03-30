@@ -1,11 +1,19 @@
-import { SetStateAction, useCallback, useState } from "react";
-import { PieChart, Pie, Sector } from "recharts";
+import { SetStateAction, useCallback, useState, useMemo } from "react";
+import { useSelector } from "react-redux";
+import { PieChart, Pie, Sector, Cell } from "recharts";
+import { RootState } from "../app/store";
 
-const data = [
-  { name: "Group A", value: 400 },
-  { name: "Group B", value: 300 },
-  { name: "Group C", value: 300 },
-  { name: "Group D", value: 200 }
+const COLORS = [
+  "#0088FE",
+  "#00C49F",
+  "#FFBB28",
+  "#FF8042",
+  "#8884D8",
+  "#82CA9D",
+  "#FF6384",
+  "#36A2EB",
+  "#FFCE56",
+  "#4BC0C0",
 ];
 
 const renderActiveShape = (props: any) => {
@@ -21,7 +29,7 @@ const renderActiveShape = (props: any) => {
     fill,
     payload,
     percent,
-    value
+    value,
   } = props;
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(-RADIAN * midAngle);
@@ -67,7 +75,7 @@ const renderActiveShape = (props: any) => {
         y={ey}
         textAnchor={textAnchor}
         fill="#333"
-      >{`PV ${value}`}</text>
+      >{`Rating ${value}`}</text>
       <text
         x={ex + (cos >= 0 ? 1 : -1) * 12}
         y={ey}
@@ -83,6 +91,27 @@ const renderActiveShape = (props: any) => {
 
 export const EmotionPieChart = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const { calls, loading, error } = useSelector((state: RootState) => state.dailyCalls);
+
+  const chartData = useMemo(() => {
+    if (loading || error || !calls.length) {
+      return [];
+    }
+
+    const ratingsByDate = calls.reduce((acc: { [key: string]: number[] }, call) => {
+      if (!acc[call.date]) {
+        acc[call.date] = [];
+      }
+      acc[call.date].push(call.rating);
+      return acc;
+    }, {});
+
+    return Object.entries(ratingsByDate).map(([date, ratings]) => ({
+      name: date,
+      value: ratings.reduce((sum, rating) => sum + rating, 0) / ratings.length,
+    }));
+  }, [calls, loading, error]);
+
   const onPieEnter = useCallback(
     (_: any, index: SetStateAction<number>) => {
       setActiveIndex(index);
@@ -90,20 +119,35 @@ export const EmotionPieChart = () => {
     [setActiveIndex]
   );
 
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!chartData.length) {
+    return <div>No data available</div>;
+  }
+
   return (
     <PieChart width={440} height={400}>
       <Pie
         activeIndex={activeIndex}
         activeShape={renderActiveShape}
-        data={data}
+        data={chartData}
         cx={220}
         cy={200}
         innerRadius={60}
         outerRadius={80}
-        fill="#8884d8"
         dataKey="value"
         onMouseEnter={onPieEnter}
-      />
+      >
+        {chartData.map((entry, index) => (
+          <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+        ))}
+      </Pie>
     </PieChart>
   );
-}
+};

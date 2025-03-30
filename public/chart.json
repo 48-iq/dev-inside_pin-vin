@@ -1,0 +1,240 @@
+{
+  "avg": {
+    "processedCallRecords": 100,
+    "avgPauseLen": 10,
+    "avgMaxPauseLen": 20,
+    "avgDuration": 30
+  },
+  "days": [
+    {
+      "date": "2021-01-01",
+      "hours": [
+        {
+          "hour": 12,
+          "rating": 60,
+          "competitions": {
+            "contact": 12,
+            "effectiveCommunication": 12,
+            "presentation": 3,
+            "convincingArguments": 12,
+            "resultOrientation": 12,
+            "initiative": 12,
+            "clientOrientation": 3,
+            "cpm": 5
+          },
+          "processedCallRecords": 100,
+          "avgPauseLen": 10,
+          "avgMaxPauseLen": 20,
+          "avgDuration": 30
+        }
+      ]
+    },
+    {
+      "date": "2021-01-02",
+      "hours": [
+        {
+          "hour": 12,
+          "rating": 60,
+          "competitions": {
+            "contact": 12,
+            "effectiveCommunication": 12,
+            "presentation": 3,
+            "convincingArguments": 12,
+            "resultOrientation": 12,
+            "initiative": 12,
+            "clientOrientation": 3,
+            "cpm": 5
+          },
+          "processedCallRecords": 100,
+          "avgPauseLen": 10,
+          "avgMaxPauseLen": 20,
+          "avgDuration": 30
+        }
+      ]
+    },
+    {
+      "date": "2021-01-03",
+      "hours": [
+        {
+          "hour": 12,
+          "rating": 60,
+          "competitions": {
+            "contact": 12,
+            "effectiveCommunication": 12,
+            "presentation": 3,
+            "convincingArguments": 12,
+            "resultOrientation": 12,
+            "initiative": 12,
+            "clientOrientation": 3,
+            "cpm": 5
+          },
+          "processedCallRecords": 100,
+          "avgPauseLen": 10,
+          "avgMaxPauseLen": 20,
+          "avgDuration": 30
+        }
+      ]
+    },
+    {
+      "date": "2021-01-04",
+      "hours": [
+        {
+          "hour": 12,
+          "rating": 60,
+          "competitions": {
+            "contact": 12,
+            "effectiveCommunication": 12,
+            "presentation": 3,
+            "convincingArguments": 12,
+            "resultOrientation": 12,
+            "initiative": 12,
+            "clientOrientation": 3,
+            "cpm": 5
+          },
+          "processedCallRecords": 100,
+          "avgPauseLen": 10,
+          "avgMaxPauseLen": 20,
+          "avgDuration": 30
+        }
+      ]
+    },
+    {
+      "date": "2021-01-05",
+      "hours": [
+        {
+          "hour": 12,
+          "rating": 60,
+          "competitions": {
+            "contact": 12,
+            "effectiveCommunication": 12,
+            "presentation": 3,
+            "convincingArguments": 12,
+            "resultOrientation": 12,
+            "initiative": 12,
+            "clientOrientation": 3,
+            "cpm": 5
+          },
+          "processedCallRecords": 100,
+          "avgPauseLen": 10,
+          "avgMaxPauseLen": 20,
+          "avgDuration": 30
+        }
+      ]
+    },
+    {
+      "date": "2021-01-06",
+      "hours": [
+        {
+          "hour": 12,
+          "rating": 60,
+          "competitions": {
+            "contact": 12,
+            "effectiveCommunication": 12,
+            "presentation": 3,
+            "convincingArguments": 12,
+            "resultOrientation": 12,
+            "initiative": 12,
+            "clientOrientation": 3,
+            "cpm": 5
+          },
+          "processedCallRecords": 100,
+          "avgPauseLen": 10,
+          "avgMaxPauseLen": 20,
+          "avgDuration": 30
+        }
+      ]
+    },
+    {
+      "date": "2021-01-07",
+      "hours": [
+        {
+          "hour": 12,
+          "rating": 60,
+          "competitions": {
+            "contact": 12,
+            "effectiveCommunication": 12,
+            "presentation": 3,
+            "convincingArguments": 12,
+            "resultOrientation": 12,
+            "initiative": 12,
+            "clientOrientation": 3,
+            "cpm": 5
+          },
+          "processedCallRecords": 100,
+          "avgPauseLen": 10,
+          "avgMaxPauseLen": 20,
+          "avgDuration": 30
+        }
+      ]
+    },
+    {
+      "date": "2021-01-08",
+      "hours": [
+        {
+          "hour": 12,
+          "rating": 60,
+          "competitions": {
+            "contact": 12,
+            "effectiveCommunication": 12,
+            "presentation": 3,
+            "convincingArguments": 12,
+            "resultOrientation": 12,
+            "initiative": 12,
+            "clientOrientation": 3,
+            "cpm": 5
+          },
+          "processedCallRecords": 100,
+          "avgPauseLen": 10,
+          "avgMaxPauseLen": 20,
+          "avgDuration": 30
+        }
+      ]
+    },
+    {
+      "date": "2021-01-09",
+      "hours": [
+        {
+          "hour": 12,
+          "rating": 60,
+          "competitions": {
+            "contact": 12,
+            "effectiveCommunication": 12,
+            "presentation": 3,
+            "convincingArguments": 12,
+            "resultOrientation": 12,
+            "initiative": 12,
+            "clientOrientation": 3,
+            "cpm": 5
+          },
+          "processedCallRecords": 100,
+          "avgPauseLen": 10,
+          "avgMaxPauseLen": 20,
+          "avgDuration": 30
+        }
+      ]
+    },
+    {
+      "date": "2021-01-10",
+      "hours": [
+        {
+          "hour": 12,
+          "rating": 60,
+          "competitions": {
+            "contact": 12,
+            "effectiveCommunication": 12,
+            "presentation": 3,
+            "convincingArguments": 12,
+            "resultOrientation": 12,
+            "initiative": 12,
+            "clientOrientation": 3,
+            "cpm": 5
+          },
+          "processedCallRecords": 100,
+          "avgPauseLen": 10,
+          "avgMaxPauseLen": 20,
+          "avgDuration": 30
+        }
+      ]
+    }
+  ]
+}

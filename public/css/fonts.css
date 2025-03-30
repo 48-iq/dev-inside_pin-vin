@@ -1,4 +1,3 @@
-/* Подключение шрифта Jost */
 @font-face {
   font-family: 'Jost';
   src: url('/fonts/Jost-VariableFont_wght.ttf') format('truetype');
@@ -15,7 +14,6 @@
   font-display: swap;
 }
 
-/* Применение шрифта для Ant Design */
 body {
   font-family: 'Jost', sans-serif;
 }

@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
-import callsReducer from '../entities/recordsSlice';
+import callsReducer from '../entities/TableSlice';
+import dailyCallsReducer from '../entities/ChartSlice'
 
 export const store = configureStore({
   reducer: {
-    calls: callsReducer 
+    calls: callsReducer,
+    dailyCalls: dailyCallsReducer,
   }
 })
 
