@@ -7,8 +7,8 @@ import { Call } from "../entities/TableSlice";
 export const RecommendationTable = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedRecord, setSelectedRecord] = useState<Call | null>(null);
-  const { calls, loading, error } = useSelector((state: RootState) => state.calls);
-
+  const { callss, loading, error } = useSelector((state: RootState) => state.calls);
+  console.log(callss)
   if (error) return <div className="centered">Ошибка загрузки данных</div>;
 
   const showModal = (record: Call) => {
@@ -100,7 +100,7 @@ export const RecommendationTable = () => {
           <ul style={{ margin: 0 }}>
             {record.recommendations?.length ? (
               record.recommendations.map((rec, index) => (
-                <li key={index}>{rec}</li>
+                <li key={index}>{rec.recommendation}</li>
               ))
             ) : (
               <li>Нет рекомендаций по этому звонку</li>
@@ -141,7 +141,7 @@ export const RecommendationTable = () => {
     <div style={{ padding: '20px 200px' }}>
       <Table
         columns={columns}
-        dataSource={calls}
+        dataSource={callss}
         loading={loading}
         rowKey="id"
       />

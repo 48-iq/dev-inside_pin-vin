@@ -10,10 +10,9 @@ import { useDispatch } from "react-redux"
 import { AppDispatch } from "../app/store"
 import { useEffect } from "react"
 import { fetchCallsFailure, fetchCallsStart, fetchCallsSuccess } from "../entities/TableSlice"
-import mockCalls from '../../public/table.json';
-import mockDaily from '../../public/chart.json';
 import { fetchDailyCallsFailure, fetchDailyCallsStart, fetchDailyCallsSuccess } from "../entities/ChartSlice"
 import styled from "styled-components"
+import { getAvg, getCalls } from "../entities/example"
 
 export const DashboardPage = () => {
   const dispatch = useDispatch<AppDispatch>();
@@ -23,17 +22,22 @@ export const DashboardPage = () => {
       try {
         dispatch(fetchCallsStart());
         dispatch(fetchDailyCallsStart());
-        // const response = await api.get('/calls');
-        // dispatch(fetchCallsSuccess(response.data));
-        
-        dispatch(fetchCallsSuccess(mockCalls));
-        dispatch(fetchDailyCallsSuccess(mockDaily));
+        const responseCall = await getCalls();
+        const responseAvg = await getAvg();
+  
+        console.log("responseCall.data:", responseCall.calls);
+        console.log("responseAvg.data:", responseAvg);
+  
+        dispatch(fetchCallsSuccess(responseCall.calls || []));
+        dispatch(fetchDailyCallsSuccess(responseAvg));
       } catch (err) {
-        dispatch(fetchCallsFailure((err as Error).message));
-        dispatch(fetchDailyCallsFailure((err as Error).message));
+        const errorMessage = (err as Error).message || "Unknown error occurred";
+        console.error("Error in loadCalls:", errorMessage);
+        dispatch(fetchCallsFailure(errorMessage));
+        dispatch(fetchDailyCallsFailure(errorMessage));
       }
     };
-
+  
     loadCalls();
   }, [dispatch]);
 
