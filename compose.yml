@@ -5,6 +5,11 @@ services:
       - 27019:27017
     volumes:
       - mongo-data:/data/db
-
+  front:
+    build: 
+      dockerfile: Dockerfile
+      context: .
+    ports:
+      - 3000:3000
 volumes:
   mongo-data:

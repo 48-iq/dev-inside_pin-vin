@@ -2,7 +2,7 @@ import { $api } from "./axios-instance"
 
 export const getAllGroups = async () => {
   return $api.request({
-    url: `example`,
+    url: `process-call`,
     method: "get",
   }).then((response) => response.data)
 }
@@ -12,7 +12,7 @@ export const uploadAudio = async (audioFile: string | Blob) => {
   formData.append('audio', audioFile);
 
   return $api.request({
-    url: `upload-audio`,
+    url: ``,
     method: "post",
     data: formData,
     headers: {
