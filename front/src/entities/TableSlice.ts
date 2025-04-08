@@ -5,7 +5,7 @@ export interface Call {
   clientTel: string;
   duration: number;
   rating: number;
-  recommendations: string[];
+  recommendations: { recommendation: string }[];
   avgPauseLen: number;
   maxPauseLen: number;
   checklistScores: {
@@ -21,13 +21,13 @@ export interface Call {
 }
 
 interface CallsState {
-  calls: Call[];
+  callss: Call[]; // Опечатка здесь
   loading: boolean;
   error: string | null;
 }
 
 const initialState: CallsState = {
-  calls: [],
+  callss: [],
   loading: false,
   error: null,
 };
@@ -42,24 +42,26 @@ const callsSlice = createSlice({
     },
     fetchCallsSuccess(state, action: PayloadAction<any[]>) {
       state.loading = false;
-      state.calls = action.payload.map(call => ({
-        id: call.id,
-        clientTel: call.clientTel,
-        duration: call.duration,
-        rating: call.rating,
-        recommendations: call.recommendations,
-        avgPauseLen: call.avgPauseLen,
-        maxPauseLen: call.maxPauseLen,
+      state.callss = action.payload.map(call => ({
+        id: call._id,
+        clientTel: call.clientTel || '',
+        duration: call.duration || 0,
+        rating: call.rating || 0,
+        recommendations: Array.isArray(call.recomendations)
+          ? call.recomendations
+          : [],
+        avgPauseLen: call.avgPauseLen || 0,
+        maxPauseLen: call.maxPauseLen || 0,
         checklistScores: {
-          contact: call.competition.contact.rating,
-          effectiveCommunication: call.competition.effectiveCommunication.rating,
-          presentation: call.competition.presentation.rating,
-          convincingArguments: call.competition.convincingArguments.rating,
-          resultOrientation: call.competition.resultOrientation.rating,
-          initiative: call.competition.initiative.rating,
-          clientOrientation: call.competition.clientOrientation.rating,
-          cpm: call.competition.cpm.rating,
-        }
+          contact: call.competitions?.contact?.rating || 0,
+          effectiveCommunication: call.competitions?.effectiveCommunication?.rating || 0,
+          presentation: call.competitions?.presentation?.rating || 0,
+          convincingArguments: call.competitions?.convincingArguments?.rating || 0,
+          resultOrientation: call.competitions?.resultOrientation?.rating || 0,
+          initiative: call.competitions?.initiative?.rating || 0,
+          clientOrientation: call.competitions?.clientOrientation?.rating || 0,
+          cpm: call.competitions?.cpm?.rating || 0,
+        },
       }));
     },
     fetchCallsFailure(state, action: PayloadAction<string>) {

@@ -19,19 +19,9 @@ export const ChartContainer = () => {
           <ChartTitle>ЭМОЦИОНАЛЬНАЯ ОЦЕНКА ЗВОНКОВ</ChartTitle>
           <EmotionPieChart />
         </ChartWrapper>
-
-        <ChartWrapper>
-          <ChartTitle>СРЕДНЕЕ ВРЕМЯ ПАУЗ В ДИАЛОГЕ</ChartTitle>
-          <PauseAreaChart />
-        </ChartWrapper>
       </LeftSection>
 
       <RightSection>
-        <TopRightText>
-          <span>ПОСЛЕДНИЙ ЗВОНОК</span> <br />
-          ТУТ ОЧЕНЬ КРУТОЙ ТЕКСТ про Александра
-        </TopRightText>
-
         <div>
           <ChartWrapper>
             <ChartTitle>СРЕДНИЙ БАЛЛ ПО КРИТЕРИЯМ ЗВОНКОВ</ChartTitle>
@@ -42,6 +32,11 @@ export const ChartContainer = () => {
         <ChartWrapper>
           <ChartTitle>КРИТЕРИИ ЗВОНКОВ</ChartTitle>
           <CriteriaPercentAreaChart />
+        </ChartWrapper>
+
+        <ChartWrapper>
+          <ChartTitle>СРЕДНЕЕ ВРЕМЯ ПАУЗ В ДИАЛОГЕ</ChartTitle>
+          <PauseAreaChart />
         </ChartWrapper>
       </RightSection>
     </Container>
@@ -78,21 +73,6 @@ const MandatoryCallsText = styled.div`
   text-align: center;
   span {
     font-size: 55px;
-  }
-`;
-
-const TopRightText = styled.div`
-  background-color: #ffe6e6;
-  padding: 20px;
-  border-radius: 10px;
-  font-size: 18px;
-  font-weight: bold;
-  text-align: center;
-  height: 80%;
-  color: black;
-  span {
-    color: #AA1515;
-    font-size: 25px;
   }
 `;
 
