@@ -1,7 +1,6 @@
 from collections import defaultdict
 
 def convert_to_avg(a):
-    # Группировка записей по дате и часу
     grouped = defaultdict(list)
     for record in a:
         key = (record['date'], record['hour'])

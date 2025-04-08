@@ -1,6 +1,8 @@
-confluent_kafka
 torch
 librosa
 datasets
 transformers
-minio
+pymongo
+fastapi
+gigachat
+typing
