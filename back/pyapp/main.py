@@ -189,6 +189,7 @@ def process_call(
     call = {
         "date": datetime.datetime.now().strftime("%Y-%m-%d"),
         "hour": datetime.datetime.now().strftime("%H"),
+        "text": text,
         "managerId": managerId,
         "clientTel": clientTel,
         "duration": duration,
